@@ -2,6 +2,9 @@ package com.carlib.datalayer.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "categorie")
 public class Category {
@@ -29,4 +32,5 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
+
 }
