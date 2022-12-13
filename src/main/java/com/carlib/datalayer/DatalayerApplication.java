@@ -61,5 +61,24 @@ public class DatalayerApplication implements CommandLineRunner {
 		productId1.getCategories().forEach(
 				category -> System.out.println("- "+category.getName())
 		);
+
+		Category newCategory = new Category();
+		newCategory.setName("Sans Permis");
+
+		newCategory = categoryService.add(newCategory);
+
+		Iterable<Category> allCategories = categoryService.getCategories();
+		allCategories.forEach(category -> System.out.println(category.getName()));
+
+		Product newProduct = new Product();
+		newProduct.setName("AssuranceAuTiersFidelite");
+		newProduct.setDescription("Les garanties de l'assurance au tiers à un prix moindre grâce à votre fidélité!");
+		newProduct.setCost(1100);
+
+		newCategory.addProduct(newProduct);
+
+		newProduct = productService.add(newProduct);
+		products.forEach(product -> System.out.println(product.getName()));
+
 	}
 }
