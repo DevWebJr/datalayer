@@ -32,4 +32,6 @@ public class CommentService {
      * @return a new object of Class Comment
      * */
     public Comment add(Comment comment) { return commentRepository.save(comment); }
+
+    public void deleteCommentById(Integer id) { commentRepository.deleteById(id); }
 }

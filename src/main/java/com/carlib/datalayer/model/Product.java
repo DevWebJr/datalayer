@@ -27,7 +27,7 @@ public class Product {
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "products", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "products", cascade = {CascadeType.ALL, CascadeType.MERGE})
     private List<Category> categories= new ArrayList<>();
 
     public int getProductId() {
@@ -38,7 +38,7 @@ public class Product {
         this.productId = productId;
     }
 
-    public String getName() {
+        public String getName() {
         return name;
     }
 

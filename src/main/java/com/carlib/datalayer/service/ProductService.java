@@ -27,13 +27,23 @@ public class ProductService {
         return productRepository.findById(id);
     }
 
+    public Iterable<Product> getProductsByName(String name) {
+        return productRepository.findByName(name);
+    }
+
+    public Iterable<Product> getProductsByCategoryName(String name) {
+        return productRepository.findByCategoriesName(name);
+    }
+
+
     /**
      *
      * @param product
      * @return a new object of Class Product
      */
-
     public Product saveProduct(Product product) {
         return productRepository.save(product);
     }
+
+    public void deleteProductById(Integer id){ productRepository.deleteById(id); }
 }

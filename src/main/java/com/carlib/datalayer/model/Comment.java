@@ -16,7 +16,7 @@ public class Comment {
     @Column(name = "contenu")
     private String content;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "produit_id")
     private Product product;
 

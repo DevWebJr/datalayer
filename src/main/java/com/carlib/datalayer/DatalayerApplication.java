@@ -95,6 +95,12 @@ public class DatalayerApplication implements CommandLineRunner {
 //		newComment.setContent("Assurance peu intéressante.");
 //		productAssuranceAuTiers.addComment(newComment);
 
+		// Derived Queries
+		Iterable<Product> searchResults = productService.getProductsByName("AssuranceTousRisques");
+		searchResults.forEach(product -> System.out.println("Résultat de la requête dérivée (Derived Querry) : "+product.getProductId()));
+
+		searchResults = productService.getProductsByCategoryName("Standard");
+		searchResults.forEach(product -> System.out.println(product.getName()));
 
 	}
 }
