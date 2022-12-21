@@ -1,8 +1,10 @@
 package com.carlib.datalayer.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.DynamicUpdate;
 
 @Entity
+@DynamicUpdate
 @Table(name = "commentaire")
 public class Comment {
 

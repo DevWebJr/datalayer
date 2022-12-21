@@ -32,7 +32,8 @@ public class ProductService {
      * @param product
      * @return a new object of Class Product
      */
-    public Product add(Product product) {
+
+    public Product saveProduct(Product product) {
         return productRepository.save(product);
     }
 }

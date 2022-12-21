@@ -12,7 +12,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import javax.swing.text.html.Option;
 import java.util.Optional;
 
 @SpringBootApplication
@@ -62,23 +61,40 @@ public class DatalayerApplication implements CommandLineRunner {
 				category -> System.out.println("- "+category.getName())
 		);
 
-		Category newCategory = new Category();
-		newCategory.setName("Sans Permis");
+//		Category newCategory = new Category();
+//		newCategory.setName("Promotion");
+//
+//		newCategory = categoryService.add(newCategory);
+//
+//		Iterable<Category> allCategories = categoryService.getCategories();
+//		allCategories.forEach(category -> System.out.println(category.getName()));
+//
+//		Product newProduct = new Product();
+//		newProduct.setName("AssurancePromotionnelle");
+//		newProduct.setDescription("Les garanties de l'assurance promotionnelle offre un prix en fonction de votre fidélité!");
+//		newProduct.setCost(950);
+//
+//		newCategory.addProduct(newProduct);
+//
+//		newProduct = productService.add(newProduct);
+//		products.forEach(product -> System.out.println(product.getName()));
 
-		newCategory = categoryService.add(newCategory);
+//		Category newCategory = new Category();
+//		newCategory.setName("-25ans");
+//
+//		Product newProduct = new Product();
+//		newProduct.setName("AssuranceAuTiers-25ans");
+//		newProduct.setDescription("Assurance au tiers réservée aux conducteurs de -25 ans.");
+//		newProduct.setCost(2000);
+//
+//		newCategory.addProduct(newProduct);
+//		categoryService.add(newCategory);
 
-		Iterable<Category> allCategories = categoryService.getCategories();
-		allCategories.forEach(category -> System.out.println(category.getName()));
+//		Product productAssuranceAuTiers = productService.getProductById(1).get();
+//		Comment newComment = new Comment();
+//		newComment.setContent("Assurance peu intéressante.");
+//		productAssuranceAuTiers.addComment(newComment);
 
-		Product newProduct = new Product();
-		newProduct.setName("AssuranceAuTiersFidelite");
-		newProduct.setDescription("Les garanties de l'assurance au tiers à un prix moindre grâce à votre fidélité!");
-		newProduct.setCost(1100);
-
-		newCategory.addProduct(newProduct);
-
-		newProduct = productService.add(newProduct);
-		products.forEach(product -> System.out.println(product.getName()));
 
 	}
 }

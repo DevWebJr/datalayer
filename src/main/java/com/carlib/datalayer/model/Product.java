@@ -1,11 +1,13 @@
 package com.carlib.datalayer.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@DynamicUpdate
 @Table(name="produit")
 public class Product {
     @Id
